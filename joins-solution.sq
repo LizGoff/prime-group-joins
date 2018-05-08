@@ -1,18 +1,24 @@
 --Get all customers and their addresses.
 
-
+SELECT * FROM "addresses" 
+JOIN "customers" ON "addresses"."customer_id" = "customers"."id"
+ORDER BY "addresses"."customer_id";
 
 --Get all orders and their line items.
 
-
+SELECT * FROM "orders" 
+JOIN "line_items" ON "orders"."id" = "line_items"."id"
+ORDER BY "orders"."id";
 
 --Which warehouses have cheetos?
 
-
+SELECT "warehouse_product"."product_id"=5, "warehouse_product"."warehouse_id"
+FROM "warehouse_product";
 
 --Which warehouses have diet pepsi?
 
-
+SELECT "warehouse_product"."product_id"=6, "warehouse_product"."warehouse_id"
+FROM "warehouse_product";
 
 --Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
 
